@@ -1138,6 +1138,9 @@ def main():
    elif P.software.title() == 'Amber':
       import parser_amber
       lv, ave_dhdl, std_dhdl = parser_amber.readDataAmber(P)
+   elif P.software.title() == 'Boss':
+      import parser_boss
+      nsnapshots, lv, dhdlt, u_klt = parser_boss.readDataBoss(P)
    else:
       from inspect import currentframe, getframeinfo
       lineno = getframeinfo(currentframe()).lineno
